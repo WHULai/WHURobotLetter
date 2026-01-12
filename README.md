@@ -9,6 +9,7 @@ This template is designed to help you produce professional, formal letters with 
 - **WHU Branding**: Pre-configured with the Wuhan University logo and color scheme.
 - **Easy to Use**: Simple commands for address, signature, and footer customization.
 - **Cross-Platform**: Compatible with standard TeX distributions (TeX Live, MacTeX) on macOS, Windows, and Linux.
+- **Signature Support**: Automatic signature image integration with fallback options.
 
 ## Acknowledgements & Attribution
 
@@ -26,7 +27,13 @@ We gratefully acknowledge the Oxford Mathematical Institute for providing the or
 1. Download or clone this repository.
 2. Ensure you have a standard LaTeX distribution installed (e.g., MacTeX on macOS).
 3. Open `main.tex` to see how to use the class.
-4. Compile using **XeLaTeX or PDFLaTeX**:
+4. (Optional) Add your signature:
+   - Create a file named `mysignature.png` in the same directory as `main.tex`
+   - The template will automatically use `mysignature.png` if it exists
+   - Otherwise, it will use `signature_example.png` as fallback
+   - If neither exists, no signature image will be shown
+   - **Note:** For privacy reasons, do not commit your real signature to a public repository
+5. Compile using **XeLaTeX or PDFLaTeX**:
 
 ```bash
 pdflatex main.tex

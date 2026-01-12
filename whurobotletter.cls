@@ -160,12 +160,21 @@
   \nobreak
 }
 
-% redefine closing command to sign off with name and postion
+% redefine closing command to sign off with name and position
+% Signature image support: use 'mysignature.png' if exists, otherwise use 'signature_example.png'
 \renewcommand{\closing}[1]{\par\nobreak\vspace{2\parskip}%
   \stopbreaks
   \noindent
   \parbox{\indentedwidth}{\raggedright
     \ignorespaces #1\\[9\medskipamount]%
-    \fromsig\\ \fromposition}%
+    % Check if mysignature.png exists, otherwise use signature_example.png
+    \IfFileExists{mysignature.png}{%
+      \includegraphics[height=1.5cm]{mysignature.png}%
+    }{%
+      \IfFileExists{signature_example.png}{%
+        \includegraphics[height=1.5cm]{signature_example.png}%
+      }{}%
+    }%
+    \\ \fromsig\\ \fromposition}%
   \par
 }
