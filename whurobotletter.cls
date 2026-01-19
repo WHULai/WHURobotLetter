@@ -102,7 +102,7 @@
        \scriptsize 
        \textsf{General Enquiries Tel: +86 (0)27 6876 2500 \quad 
          \ifthenelse{\equal{\fromphone}{}}%
-         {}{Direct: +86 (0)27 \fromphone}%\\
+         {}{Direct: +86 \fromphone}%\\
          %Fax: +86 (0)27 {\fromfax} \quad
          \\ Email: %
          \ifthenelse{\equal{\fromemail}{enquiries}}%
