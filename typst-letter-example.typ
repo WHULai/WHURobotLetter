@@ -18,6 +18,7 @@
   language: "en",
   description: "Letter from Lai Wei",
   keywords: "Business Correspondence",
+  signature-path: "signature_example.png",
   // attachment-text: "CV",
 )
 

@@ -626,6 +626,8 @@
 /// - show-footer (boolean): Whether to show the footer or not
 /// - closing (content): The closing of the letter. This defaults to "Attached Curriculum Vitae". You can set this to `none` to show the default closing or remove it completely.
 /// - attachment-text (string): The text for the attachment. If not set, it will use the translated "Attached: Curriculum Vitae" text.
+/// - signature-path (str | content | none): The signature image to show above the sender's name. If unset, no signature image is shown.
+/// - signature-width (relative): The width of the signature image when `signature-path` is a string path.
 /// - use-smallcaps (boolean): Whether to use small caps formatting throughout the template
 /// - show-address-icon (boolean): Whether to show the address icon
 /// - description (str | none): The PDF description
@@ -642,6 +644,8 @@
   show-footer: true,
   closing: none,
   attachment-text: none,
+  signature-path: none,
+  signature-width: 40%,
   paper-size: "a4",
   use-smallcaps: true,
   show-address-icon: false,
@@ -658,6 +662,14 @@
 
   if closing == none {
     closing = default-closing(lang_data, attachment-text: attachment-text)
+  }
+
+  let signature-image = if signature-path == none {
+    none
+  } else if type(signature-path) == str {
+    image(signature-path, width: signature-width)
+  } else {
+    signature-path
   }
 
   let desc = if description == none {
@@ -867,11 +879,13 @@
         #text(weight: "light")[#linguify("sincerely", from: lang_data)#if (
             language != "de"
           ) [#sym.comma]] \
-        #box(width: 6cm, height: 2cm)[
-          #block[
-            #image("signature_example.png", width: 20%)
-          ]
-        ] \
+        #if signature-image != none [
+          #box(width: 6cm, height: 2cm)[
+            #block[
+              #signature-image
+            ]
+          ] \
+        ]
         #text(weight: "bold")[#author.firstname #author.lastname] \ \
       ]
     ]

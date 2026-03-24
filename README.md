@@ -36,7 +36,8 @@ We gratefully acknowledge the Oxford Mathematical Institute for providing the or
 4. (Optional) Add your signature:
    - For LaTeX, create a file named `mysignature.png` in the same directory as `latex-letter-example.tex`
    - The LaTeX class will automatically use `mysignature.png` if it exists, otherwise `signature_example.png`
-   - The Typst sample uses `signature_example.png` in the closing block; replace that file or update `typst-letter-template.typ` if you want a different signature image
+   - For Typst, set `signature-path: "mysignature.png"` in `#show: letter.with(...)` inside `typst-letter-example.typ`
+   - If `signature-path` is not set, the Typst template will not show a signature image
    - **Note:** For privacy reasons, do not commit your real signature to a public repository
 5. Compile using the appropriate command:
 
