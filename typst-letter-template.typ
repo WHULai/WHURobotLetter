@@ -9,7 +9,7 @@
 #let color-darknight = rgb("#131A28")
 #let color-darkgray = rgb("#333333")
 #let color-gray = rgb("#5d5d5d")
-#let default-accent-color = rgb("#262F99")
+#let default-accent-color = rgb("#002554")
 #let default-location-color = rgb("#333333")
 
 // const icons
