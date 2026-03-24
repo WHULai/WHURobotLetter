@@ -639,8 +639,8 @@
   date: datetime.today().display("[month repr:long] [day], [year]"),
   accent-color: default-accent-color,
   language: "en",
-  font: ("Source Sans Pro"),
-  header-font: "Roboto",
+  font: ("Source Sans Pro", "Source Han Sans SC"),
+  header-font: ("Roboto", "Source Han Sans SC"),
   show-footer: true,
   closing: none,
   attachment-text: none,
@@ -886,7 +886,7 @@
             ]
           ] \
         ]
-        #text(weight: "bold")[#author.firstname #author.lastname] \ \
+        #text(weight: "bold")[#__format_author_name(author, language)] \ \
       ]
     ]
   }

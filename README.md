@@ -37,6 +37,7 @@ We gratefully acknowledge the Oxford Mathematical Institute for providing the or
    - For LaTeX, create a file named `mysignature.png` in the same directory as `latex-letter-example.tex`
    - The LaTeX class will automatically use `mysignature.png` if it exists, otherwise `signature_example.png`
    - For Typst, set `signature-path: "mysignature.png"` in `#show: letter.with(...)` inside `typst-letter-example.typ`
+   - To force Chinese text to render as `Source Han Sans SC` (思源黑体), first install that font locally, or place the font files in a directory such as `fonts/` and compile with `typst compile --font-path fonts typst-letter-example.typ`
    - If `signature-path` is not set, the Typst template will not show a signature image
    - **Note:** For privacy reasons, do not commit your real signature to a public repository
 5. Compile using the appropriate command:
