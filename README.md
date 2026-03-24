@@ -1,47 +1,59 @@
-# WHU Letter LaTeX Template
+# WHU Letter Templates
 
-An unofficial LaTeX letter template for School of Robotics, Wuhan University (WHU) students and faculty.
+An unofficial set of letter templates for School of Robotics, Wuhan University (WHU) students and faculty.
 
-This template is designed to help you produce professional, formal letters with the Wuhan University branding, suitable for academic recommendations, cover letters, and official correspondence.
+This repository is designed to help you produce professional, formal letters for WHU-related academic and official correspondence. It currently includes a WHU-branded LaTeX letter class and a Typst letter template adapted from Modern CV.
 
 ## Features
 
-- **WHU Branding**: Pre-configured with the Wuhan University logo and color scheme.
-- **Easy to Use**: Simple commands for address, signature, and footer customization.
-- **Cross-Platform**: Compatible with standard TeX distributions (TeX Live, MacTeX) on macOS, Windows, and Linux.
-- **Signature Support**: Automatic signature image integration with fallback options.
+- **WHU Branding**: The LaTeX class is pre-configured with the Wuhan University logo, header, and footer styling.
+- **Two Workflows**: Includes a LaTeX class (`whurobotletter.cls`) and a Typst template (`lib.typ` and `letter.typ`).
+- **Formal Letter Layout**: Supports recipient blocks, subject lines, signatures, and footer metadata for regular correspondence.
+- **Typst Letter Adaptation**: Refactors the Modern CV cover-letter component into a general-purpose letter template with multilingual labels and a simplified letter-oriented interface.
 
 ## Acknowledgements & Attribution
 
-This project is a derivative work based on the **Departmental LaTeX Letter Class** provided by the **Mathematical Institute, University of Oxford**.
+This project contains derivative work based on two upstream templates:
 
-- **Original Source**: [Oxford Mathematical Institute - Letter Writing with LaTeX](https://www.maths.ox.ac.uk/members/it/faqs/latex/letters)
-- **Original Author**: K. A. Gillow (2010)
+- **LaTeX Source**: [Oxford Mathematical Institute - Letter Writing with LaTeX](https://www.maths.ox.ac.uk/members/it/faqs/latex/letters)
+- **LaTeX Original Author**: K. A. Gillow (2010)
+- **Typst Source**: [Modern CV](https://github.com/ptsouchlos/modern-cv), originally developed by DeveloperPaul123
+- **Typst Package**: [modern-cv on Typst Universe](https://typst.app/universe/package/modern-cv/)
 
-We gratefully acknowledge the Oxford Mathematical Institute for providing the original `oxmathletter` class, which served as the structural foundation for this adaptation.
+We gratefully acknowledge the Oxford Mathematical Institute for providing the original `oxmathletter` class, which served as the structural foundation for the LaTeX version. We also acknowledge DeveloperPaul123 (`ptsouchlos`) for creating Modern CV, whose cover-letter component provided the design basis for the Typst adaptation included here.
 
-*Note: This adaptation replaces Oxford-specific assets (logos, proprietary fonts) with generic or WHU-specific equivalents to comply with licensing and usage rights.*
+*Note: These adaptations replace Oxford-specific assets and restructure the Modern CV cover-letter interface to better suit WHU-branded and general-purpose formal correspondence.*
 
 ## Installation & Usage
 
 1. Download or clone this repository.
-2. Ensure you have a standard LaTeX distribution installed (e.g., MacTeX on macOS).
-3. Open `main.tex` to see how to use the class.
+2. Ensure you have the toolchain needed for the workflow you want to use:
+   - For LaTeX: a standard TeX distribution such as TeX Live, MacTeX, or MiKTeX
+   - For Typst: the Typst CLI or the Typst web app
+3. Choose the template you want to edit:
+   - `main.tex` demonstrates the LaTeX letter class
+   - `letter.typ` demonstrates the Typst letter template
 4. (Optional) Add your signature:
-   - Create a file named `mysignature.png` in the same directory as `main.tex`
-   - The template will automatically use `mysignature.png` if it exists
-   - Otherwise, it will use `signature_example.png` as fallback
-   - If neither exists, no signature image will be shown
+   - For LaTeX, create a file named `mysignature.png` in the same directory as `main.tex`
+   - The LaTeX class will automatically use `mysignature.png` if it exists, otherwise `signature_example.png`
+   - The Typst sample uses `signature_example.png` in the closing block; replace that file or update `lib.typ` if you want a different signature image
    - **Note:** For privacy reasons, do not commit your real signature to a public repository
-5. Compile using **XeLaTeX or PDFLaTeX**:
+5. Compile using the appropriate command:
+
+### LaTeX
 
 ```bash
 pdflatex main.tex
 ```
 
+### Typst
+
+```bash
+typst compile letter.typ
+```
 
 ## License
 
-This project is licensed under the **MIT License** - see the [LICENSE](https://www.google.com/search?q=LICENSE&authuser=1) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-The original code structure is adapted from the `oxmathletter` class, used here under fair use for educational and open-source adaptation purposes.
+The repository includes adaptations of the `oxmathletter` class and the Modern CV Typst template. Please retain appropriate attribution when redistributing derivative work.
