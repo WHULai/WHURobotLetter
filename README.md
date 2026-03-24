@@ -7,7 +7,7 @@ This repository is designed to help you produce professional, formal letters for
 ## Features
 
 - **WHU Branding**: The LaTeX class is pre-configured with the Wuhan University logo, header, and footer styling.
-- **Two Workflows**: Includes a LaTeX class (`whurobotletter.cls`) and a Typst template (`lib.typ` and `letter.typ`).
+- **Two Workflows**: Includes a LaTeX class (`whurobotletter.cls`) and a Typst template (`typst-letter-template.typ` and `typst-letter-example.typ`).
 - **Formal Letter Layout**: Supports recipient blocks, subject lines, signatures, and footer metadata for regular correspondence.
 - **Typst Letter Adaptation**: Refactors the Modern CV cover-letter component into a general-purpose letter template with multilingual labels and a simplified letter-oriented interface.
 
@@ -31,25 +31,25 @@ We gratefully acknowledge the Oxford Mathematical Institute for providing the or
    - For LaTeX: a standard TeX distribution such as TeX Live, MacTeX, or MiKTeX
    - For Typst: the Typst CLI or the Typst web app
 3. Choose the template you want to edit:
-   - `main.tex` demonstrates the LaTeX letter class
-   - `letter.typ` demonstrates the Typst letter template
+   - `latex-letter-example.tex` demonstrates the LaTeX letter class
+   - `typst-letter-example.typ` demonstrates the Typst letter template
 4. (Optional) Add your signature:
-   - For LaTeX, create a file named `mysignature.png` in the same directory as `main.tex`
+   - For LaTeX, create a file named `mysignature.png` in the same directory as `latex-letter-example.tex`
    - The LaTeX class will automatically use `mysignature.png` if it exists, otherwise `signature_example.png`
-   - The Typst sample uses `signature_example.png` in the closing block; replace that file or update `lib.typ` if you want a different signature image
+   - The Typst sample uses `signature_example.png` in the closing block; replace that file or update `typst-letter-template.typ` if you want a different signature image
    - **Note:** For privacy reasons, do not commit your real signature to a public repository
 5. Compile using the appropriate command:
 
 ### LaTeX
 
 ```bash
-pdflatex main.tex
+pdflatex latex-letter-example.tex
 ```
 
 ### Typst
 
 ```bash
-typst compile letter.typ
+typst compile typst-letter-example.typ
 ```
 
 ## License

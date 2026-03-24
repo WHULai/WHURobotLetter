@@ -1,4 +1,4 @@
-#import "lib.typ": *
+#import "typst-letter-template.typ": *
 
 #show: letter.with(
   author: (
