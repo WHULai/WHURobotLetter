@@ -62,11 +62,13 @@
 %\newcommand*{\fax}[1]{\def\fromfax{#1}}
 \newcommand*{\email}[1]{\def\fromemail{#1}}
 \newcommand*{\researchgroup}[1]{\def\fromresearchgroup{#1}}
+\newcommand*{\schooladdress}[1]{\def\fromschooladdress{#1}}
 %set optional settings, initial values
 \refcode{}\subject{}
 \position{}\phone{}%\fax{273583}
 \email{enquiries}
 \researchgroup{}
+\schooladdress{Lei Jun Science and Technology Building\\Wuhan University, Wuhan, 430072}
 
 % first page header and footer 
 \renewcommand{\ps@firstpage}{%
@@ -79,9 +81,9 @@
              {\large \textsf{%
                  \ifthenelse{\equal{\fromresearchgroup}{}}%
                  {}{\fromresearchgroup\\}%
-                 School of Robotics\\
-                 Lei Jun Science and Technology Building\\
-                 Wuhan University, Wuhan, 430072}}\\[26mm]
+                 School of Robotics%
+                 \ifthenelse{\equal{\fromschooladdress}{}}%
+                 {}{\\\fromschooladdress}}}\\[26mm]
             \toname\\
             \toaddress
           }
